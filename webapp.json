@@ -1,6 +1,6 @@
 {
   "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-  "contentVersion": "1.0.0.0",
+  "contentVersion": "2.0.0.0",
   "parameters": {
     "siteName": {
       "type": "string",
@@ -43,7 +43,7 @@
     },
     "repoURL": {
       "type": "string",
-      "defaultValue": "https://github.com/specijaa/NodeRedAzureWebApp.git",
+      "defaultValue": "https://github.com/drmabuzo/NodeRedAzureWebApp.git",
       "metadata": {
         "description": "The URL for the GitHub repository that contains the project to deploy."
       }
@@ -57,7 +57,28 @@
     },
     "nodeJsVersion":{
       "type": "string",
-      "defaultValue": "8.9.4",
+      "allowedValues": [
+        "0.10.40",
+        "0.10.5",
+        "0.12.6",
+        "0.6.20",
+        "0.8.28",
+        "4.8.4",
+        "6.12.3",
+        "6.5.0",
+        "6.9.1",
+        "6.9.5",
+        "7.10.1",
+        "8.1.4",
+        "8.10.0",
+        "8.11.1",
+        "8.4.0",
+        "8.5.0",
+        "8.9.4",
+        "10.0.0",
+        "10.6.0"
+      ],
+      "defaultValue": "10.6.0",
       "metadata": {
         "description": "Nodejs version, make sure that the App Service supports the version you set here."
       }

@@ -26,7 +26,7 @@
       ],
       "defaultValue": "F1",
       "metadata": {
-        "description": "The pricing tier for the hosting plan. For any tier >=B1 Always on will be activated."
+        "description": "The pricing tier for the hosting plan. For any tier >= B1 Always on will be activated."
       }
     },
     "workerSize": {
@@ -78,7 +78,7 @@
         "10.0.0",
         "10.6.0"
       ],
-      "defaultValue": "10.6.0",
+      "defaultValue": "8.9.4",
       "metadata": {
         "description": "Nodejs version, make sure that the App Service supports the version you set here."
       }

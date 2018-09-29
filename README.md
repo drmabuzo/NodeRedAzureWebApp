@@ -1,8 +1,8 @@
-# node-red-azure-webapp
-A webapp wrapper for running node-red in an Azure Web App.
+# NodeRedAzureWebApp
+A webapp wrapper for running node-red in an Azure Web App using Windows.
 To use it just:
 
-1. Deploy to Azure with this button:
+1. Deploy to Azure:
 
 <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fspecijaa%2FNodeRedAzureWebApp%2Fmaster%2Fwebapp.json" target="_blank"><img src="http://azuredeploy.net/deploybutton.png"/></a>
 
@@ -46,21 +46,22 @@ It comes with some cool nodes preinstalled:
 * Azure SQL
 * Swagger node
 
-## Securing your deployment
+## Security
 
-To secure this deployment and add an admin password edit the `settings.js` file.
+Username/password based authentication
+To enable user authentication on the Editor and Admin API, add the following to your settings.js file:
 
-## Version History
+adminAuth: {
+    type: "credentials",
+    users: [{
+        username: "admin",
+        password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",
+        permissions: "*"
+    }]
+}
 
-* v0.0.1
-    * First test with basic nodes
-* v0.0.2
-    * Deploy to Azure Button
-    * Add cognitive services
-* v0.0.3
-    * Update Node-Red version to 0.18.4
-* v1.0.0
-    * Update Nodejs to 8.9.4
-    * Make Nodejs version configurable
-    * Add Swagger Node
+The users property is an array of user objects. This allows you to define multiple users, each of whom can have different permissions.
+
+
+
 
